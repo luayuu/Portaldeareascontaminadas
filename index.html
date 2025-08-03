@@ -31,6 +31,11 @@
       cursor: pointer;
       border-radius: 5px;
     }
+    #menu button.active {
+  background-color: #0056b3;
+  font-weight: bold;
+  color: #fff;
+}
     #menu button:hover {
       background-color: #0056b3;
     }
@@ -58,15 +63,21 @@
 
   <script>
     function mostrarMapa(mapa) {
-      const iframe = document.getElementById('iframeMapa');
-      if (mapa === 'estado') {
-        iframe.src = 'https://luayuu.github.io/areascontaminadassp/';
-      } else if (mapa === 'cidade') {
-        iframe.src = 'https://luayuu.github.io/areascontaminadascidadesaopaulo/';
-      }
-    }
+  const iframe = document.getElementById('iframeMapa');
+  const botoes = document.querySelectorAll('#menu button');
+  botoes.forEach(btn => btn.classList.remove('active'));
+
+  if (mapa === 'estado') {
+    iframe.src = 'https://luayuu.github.io/areascontaminadassp/';
+    document.querySelector('#menu button:nth-child(2)').classList.add('active');
+  } else if (mapa === 'cidade') {
+    iframe.src = 'https://luayuu.github.io/areascontaminadascidadesaopaulo/';
+    document.querySelector('#menu button:nth-child(3)').classList.add('active');
+  }
+}
   </script>
 
 </body>
 </html>
+
 
