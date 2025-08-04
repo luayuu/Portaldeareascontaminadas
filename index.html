@@ -50,21 +50,18 @@
   </style>
 </head>
 <body>
-
+<iframe src="googlehybrid/index.html" width="100%" height="600px" style="border:none;"></iframe>
   <div id="menu">
     <h2>Portal de Mapas de Áreas Contaminadas</h2>
     <button onclick="mostrarMapa('estado')">Áreas Contaminadas Estado de SP</button>
     <button onclick="mostrarMapa('cidade')">Áreas Contaminadas Cidade de São Paulo</button>
   </div>
 
-<iframe src="googlehybrid/index.html" width="100%" height="600px" style="border:none;"></iframe>
-
   <script>
     function mostrarMapa(mapa) {
   const iframe = document.getElementById('iframeMapa');
   const botoes = document.querySelectorAll('#menu button');
   botoes.forEach(btn => btn.classList.remove('active'));
-
   if (mapa === 'estado') {
     iframe.src = 'https://luayuu.github.io/areascontaminadassp/';
     document.querySelector('#menu button:nth-child(2)').classList.add('active');
@@ -78,6 +75,7 @@
 
 </body>
 </html>
+
 
 
 
